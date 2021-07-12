@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<?php
+    session_start(); 
+?>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="fonts/font-awesome.css">
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/main.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: monospace;
+		    text-decoration: none;
+		}
+
+		header{
+			position: fixed;
+			width: 100%;
+			top: 0;
+			left: 0;
+
+			padding: 20px;
+			background: #67B3EE;
+		}
+
+		header #button-menu{
+			font-size: 30px;
+			color: #FBE508;
+			cursor: pointer;
+		}
+
+		.navegacion{
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 0%;
+			height: 100vh;
+		}
+
+		.navegacion ul{
+			width: 320px;
+			height: 100%;
+			background: #67B3EE;
+			list-style: none;
+			position: absolute;
+			top: 0;
+			left: -320px;
+			transition: left .3s;
+		}
+
+		.navegacion .menu li.title-menu{
+			padding: 20px;
+			background: #5F6F81;
+			color: #fff;
+			text-align: center;
+			font-size: 22px;
+		}
+
+		.navegacion .menu a{
+			display: block;
+			padding: 20px;
+			border-bottom: 1px solid #C6D0DA;
+
+			font-size: 22px;
+			font-weight: 200;
+			text-decoration: none;
+			color: #575D69;
+		}
+
+		.navegacion .menu li span.icon-menu{
+			margin-right: 12px;
+		}
+
+		.navegacion .menu .item-submenu > a::after{
+			float: right;
+			color: red;
+		}
+
+		.navegacion .submenu li.title-menu{
+			background: #fff;
+			color: #575D69;
+		}
+
+		.navegacion .submenu li.go-back{
+			padding: 10px 20px;
+			background: #5F6F81;
+			color: #fff;
+			font-size: 18px;
+			cursor: pointer;
+		}
+
+		.m1:hover{
+			transition: .25s;
+			color: white;
+			background: #677EEE;
+		}
+
+		.m2:hover{
+			transition: .25s;
+			background: #EAEE67;
+		}
+
+		.m3:hover{
+			transition: .25s;
+			background: #67EE96;
+		}
+
+		.m4:hover{
+			transition: .25s;
+			background: #67EEEE;
+		}
+
+		.m5:hover{
+			transition: .25s;
+			background: #EEC767;
+		}
+
+		.m6:hover{
+			transition: .25s;
+			background: #EE6780;
+		}
+
+		.m7:hover{
+			transition: .25s;
+			background: #9067EE;
+		}
+
+		.m8:hover{
+			transition: .25s;
+			background: #DBB5BC;
+		}
+
+		.mu:hover{
+			transition: .25s;
+			background: #A4A2A8;
+		}
+
+		@media screen and (max-width: 320px){
+			.navegacion ul{
+				width: 100%;
+			}
+		}
+
+		.d .us{
+			margin-left: 75%;
+		}
+	</style>
+</head>
+<body>
+	<header>	
+		<div class="d">
+			<span id="button-menu" class="fa fa-bars"></span>
+			<div class="us">
+				<?php echo $_SESSION['usuario'].' - ROL: '.$_SESSION['tipo'] ?>	
+			</div>
+		</div>
+		<nav class="navegacion">
+			<ul class="menu">
+				<li class="title-menu">MENU</li>
+				<li class="item-submenu" menu="0">
+					<a href="#">OPERACIONES</a>
+					<ul class="submenu">
+						<li class="title-menu"><span class="fa fa-home icon-menu"></span>OPERACIONES</li>
+						<li class="go-back">Atras</li>
+						<li><a href="asistencias1.php" class="m7">ASISTENCIA</a></li>
+					</ul>
+				</li>
+				<li class="item-submenu" menu="1">
+					<a href="#">REPORTES</a>
+					<ul class="submenu">
+						<li class="title-menu"><span class="fa fa-home icon-menu"></span>REPORTES</li>
+						<li class="go-back">Atras</li>
+						<li><a href="reporte1.php" class="m8">ASISTENCIAS EN UN CURSO POR FECHA</a></li>
+						<li><a href="reporte2.php" class="m8">2</a></li>
+					</ul>
+				</li>
+				<li class="item-submenu" menu="3">
+					<a href="index.php">CERRAR SECION</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+</body>
+</html>
+
